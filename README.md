@@ -1,75 +1,113 @@
-# Android-Mining
-Quick installation of mining on Android Phones
+## OpenBullet
 
-## Github cloning and customizing
-1. clone this repo to your own github account.
-2. change the URL on line 35 of the README.md to reflect your own account.
-3. replace `QR/install.png` with your own.
-4. **Important**: change the SSH key on line 13 of `install.sh` to reflect your own SSH key.
-5. change lines 50 to reflect your own github link.
-6. adjust the `config.json` to your address and mining details.
-7. optional: change line 20 of your `config.json` to your own LAN IP range.
-8. optional: change line 21 of your `config.json` to the LAN IP your phone uses.
+<img src="https://github.com/esfelurm/OpenBullet/assets/104654028/6a1ee1fe-6049-4ab8-a097-2cf6eb373783">
 
-## No support
-- Although the installation procedure is considered doable for people that have zero to little Linux knowledge, I do **not** provide any support to users that that mess up as a result of lack of knowledge.
-- Reading is an dying art. There's no instruction video for people that can't follow instructions step-by-step.
+<b>Run any configuration for OpenBullet in Linux/Termox/Windows with this tool!</b>
 
-## Prerequisites
-- Some fundamental Linux knowledge is *required*. (do an online coarse!)
-- Knowledge about how to operate Linux *screen* is a must.
-- Knowledge on *ssh* and *scp* is highly recommended.
-- Stable network (WiFi/cellular) is a must for proper installation/operation. Be prepared to troubleshoot and fix them yourself.
+<h3> <a href="https://github.com/esfelurm/OpenBullet/tree/main/Config">Config Free </a> </h3>
 
-## Installation instructions
-- install Userland app (preferably version `2.8.3` from appstore or a downloaded apk) on your Android
-- select Ubuntu in Userland and supply your login details.
-- choose SSH
-- wait for it to install, enter Ubuntu and log into your account
-```bash
-lscpu
+<h4> <a href="https://t.me/OpenBullet_E">Channel Telegram Config OpenBullet Free </a></h4>
+
+<img src="https://github.com/esfelurm/OpenBullet/assets/104654028/835500b2-71d5-43ef-9cb0-f92c37b8b940">
+
+# install
+
 ```
-If the output doesn't show `Architecture: aarch64` or `CPU op-mode(s): 32-bit, 64-bit`, then do not bother to continue. Your phone is not running a 64-bit OS.
-
-```bash
-curl -o- -k https://raw.githubusercontent.com/Oink70/Android-Mining/main/install.sh | bash
-```
-For easy access on phones:
-![install.sh](QR/install.png)
-
-Now adjust pools, mineraddress+workername, and network settings for the API.
-exit with `<CTRL>-X` followed by `y` and an `<ENTER>`
-```bash
-nano config.json
+git clone https://github.com/esfelurm/OpenBullet
+cd OpenBullet
+python OpenBullet.py
 ```
 
-## Usage:
-start mining with `~/ccminer/start.sh`
+# support
 
-Standard SSH port for Userland is port `2022`.
-Optional: create an entry in your SSH config file for each phone:
-```
-Host Pixel2XL01
-    Hostname 192.168.25.81
-    Port 2022
-    User Pixel2XL01
-    IdentityFile ~\.ssh\id-rsa_oink-private
-```
+<table style="width:100%">
+  <tr>
+    <th>Termux</th>
+    <th>Linux</th> 
+    <th>Windows</th>
+  </tr>
+  <tr>
+    <td>✅</td>
+    <td>✅</td> 
+    <td>✅</td>
+  </tr>
+</table>
 
-Starting the miner:
-`~/ccminer/start.sh`
 
-Monitoring the miner:
-- `screen -x CCminer`
-- exit with `CTRL-a` key combination followed by `d`.
+# Options
 
-Terminating the miner:
-`screen -X -S CCminer quit`
+  <summary>Parsing Loliscript</summary>
 
-## Monitoring your miners (on a linux host)
-check [MONITORING](/monitoring/MONITORING.md).
+  - [x] PARSE
+  - [x] REQUEST
+  - [x] KEYCHECK
+  - [x] FUNCTIONS
+  - [x] UTILITY
 
-WARNING: The scripts installs my own public SSH key. You may want to remove that from your `~/.ssh/authorized_keys` file and replace it with your own for passwordless access.
 
-### I accept no warranties or liabilities on this repo. It is supplied as a service.
-### Use at your own risk!!!
+  <summary>Processing Blocks</summary>
+
+  - FUNCTION
+    - [x] Constant
+    - [x] Base64Encode
+    - [x] Base64Decode
+    - [x] ToUppercase
+    - [x] ToLowercase
+    - [x] Length
+    - [x] Replace
+    - [x] URLEncode
+    - [x] URLDecode
+    - [x] Hash
+    - [x] HMAC
+    - [x] RandomNum
+    - [x] RandomString
+    - [x] CurrentUnixTime
+    - [x] UnixTimeToDate
+      - [ ] Dynamic DateFormat
+    - [x] Ceil
+    - [x] Floor
+    - [x] Round
+    - [ ] Compute
+    - [x] CountOccurrences
+    - [x] CharAt
+    - [x] Substring
+    - [x] ReverseString
+    - [x] Trim
+    - [x] GetRandomUA
+    - [x] PBKDF2PKCS5
+    - [x] UnixTimeToISO8601
+    - [x] Unescape
+    - [x] ClearCookies
+    - [x] HTMLEntityEncode
+    - [x] HTMLEntityDecode
+  - REQUEST
+    - [x] Standard
+    - [x] BasicAuth
+    - [x] Multipart
+    - [x] Raw
+
+  - PARSE
+    - [x] LR
+    - [x] CSS
+    - [x] JSON
+    - [x] REGEX
+      - [ ] EncodeOutput
+      - [ ] DotMatches
+
+  - KEYCHECK
+    - [ ] CUSTOM
+
+  - UTILITY
+    - [x] List
+    - [x] Variable
+    - [x] Conversion
+    - [x] File
+    - [x] Folder
+
+  <summary>Proxy</summary>
+
+  - [x] HTTP
+  - [x] HTTPS
+  - [x] SOCKS4
+  - [x] SCOKS5
+
